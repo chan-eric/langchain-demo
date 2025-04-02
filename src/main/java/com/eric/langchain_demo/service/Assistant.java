@@ -1,8 +1,11 @@
 package com.eric.langchain_demo.service;
 
-//@AiService
-interface Assistant {
+import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.spring.AiService;
 
-    //@SystemMessage("You are a polite assistant")
+@AiService(chatModel = "chatLanguageModel")
+public interface Assistant {
+
+    @SystemMessage("You are a polite assistant")
     String chat(String userMessage);
 }
